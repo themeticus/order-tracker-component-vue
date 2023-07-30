@@ -1,0 +1,89 @@
+/* admin */
+
+.admin-options {
+    padding: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.admin-tray {
+    background: var(--lightgray-fg);
+    color: var(--white);
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    padding: 0px;
+    transition: bottom 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    border-top: 1px dashed var(--linegray);
+}
+
+#toggle {
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    left: -100%;
+    top: -100%;
+}
+
+#toggle+label {
+    position: fixed;
+    cursor: pointer;
+    padding: 10px;
+    background: var(--green);
+    width: 100%;
+    border-radius: 0px;
+    padding: 8px 10px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0px;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    border-top: 1px dashed var(--linegray);
+}
+
+#toggle+label:after {
+    content: "Open Admin";
+    color: var(--white);
+}
+
+#toggle:checked+label:after {
+    content: "Close Admin";
+    color: var(--dark);
+}
+
+#toggle:checked~.admin-tray {
+    bottom: 0;
+}
+
+#toggle:checked+label {
+    background: orange;
+}
+
+.admin-status {
+    width: 180px;
+    margin: 0px auto 0px;
+    color: var(--dark);
+    padding: 10px 10px;
+}
+
+.cancel {
+    background-color: orange;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+
+.ordered {
+    left: 0;
+}
+
+.shipped {
+    left: calc(50% - 15px)
+}
+
+.delivered {
+    right: 0;
+}
